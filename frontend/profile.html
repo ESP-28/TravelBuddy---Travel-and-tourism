@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Travel Buddy</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Profile</h2>
+        <form id="profileForm">
+            <input type="text" id="profileName" placeholder="Full Name" required>
+            <input type="text" id="profileInterests" placeholder="Travel Interests (comma separated)">
+            <button type="submit">Update Profile</button>
+        </form>
+        
+        <button id="homeButton">🏠 Back to Home</button>
+        <button id="logout">🚪 Logout</button>
+    </div>
+
+    <script>
+        document.getElementById("homeButton").addEventListener("click", function() {
+            window.location.href = "index.html"; // ✅ Redirects to home
+        });
+
+        document.getElementById("logout").addEventListener("click", function() {
+            localStorage.removeItem("token");
+            alert("Successfully logged out");
+            window.location.href = "index.html"; // ✅ Redirects to home on logout
+        });
+    </script>
+</body>
+</html>

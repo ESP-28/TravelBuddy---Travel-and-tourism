@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Find a Travel Buddy</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- ✅ Token Check -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        alert("You must be logged in to access this page.");
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+
+  <div class="container">
+    <h2>Search for a Travel Buddy</h2>
+    <form id="buddySearchForm">
+      <input type="text" id="searchCity" placeholder="City" />
+      <input type="text" id="searchDestination" placeholder="Preferred Destination" />
+      <input type="text" id="searchInterest" placeholder="Travel Interest" />
+      <button type="submit">Search</button>
+    </form>
+
+    <h3>Matches:</h3>
+    <div id="buddyResults"></div>
+  </div>
+</body>
+</html>

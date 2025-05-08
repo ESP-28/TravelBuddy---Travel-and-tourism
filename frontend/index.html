@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Buddy | Explore the World</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="script.js" defer></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Travel Buddy</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#packages">Trips & Packages</a></li>
+      <li><a href="#buddy">Travel Buddy</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li id="loginLink"><a href="login.html" class="btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const token = localStorage.getItem("token");
+      const loginLink = document.getElementById("loginLink");
+
+      if (token) {
+        loginLink.innerHTML = '<a href="profile.html" class="btn">Profile</a>';
+      }
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero">
+    <h1 data-aos="fade-up">Explore the World, Your Way!</h1>
+    <p data-aos="fade-up" data-aos-delay="300">Find the best destinations & travel buddies.</p>
+    <a href="#destinations" class="btn" data-aos="fade-up" data-aos-delay="500">Explore Now</a>
+  </header>
+
+  <!-- Destinations Section -->
+  <section id="destinations" class="section">
+    <h2>Top Destinations</h2>
+    <div class="destinations-carousel">
+      <div class="destination" data-aos="fade-in">🌍 Paris</div>
+      <div class="destination" data-aos="fade-in">🏝️ Bali</div>
+      <div class="destination" data-aos="fade-in">🗽 New York</div>
+    </div>
+  </section>
+
+  <!-- Trips & Packages Section -->
+  <section id="packages" class="section">
+    <h2>Our Best Travel Packages</h2>
+    <div class="packages">
+      <div class="package" data-aos="flip-left">Budget Adventure</div>
+      <div class="package" data-aos="flip-left">Luxury Getaway</div>
+      <div class="package" data-aos="flip-left">Backpacking Fun</div>
+    </div>
+  </section>
+
+  <!-- Travel Buddy Section -->
+  <section id="buddy" class="section" style="background-color: #ffcc00; color: black;">
+    <h2>Find a Travel Buddy</h2>
+    <p>Meet like-minded travelers and explore together.</p>
+    <a href="login.html" class="btn">Find a Buddy</a>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="section">
+    <h2>Travel Blog</h2>
+    <p>Stories, tips, and guides from fellow travelers will be here soon!</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

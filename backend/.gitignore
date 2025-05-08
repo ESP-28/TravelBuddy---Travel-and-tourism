@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Vercel or Render config (if auto-generated)
+.vercel/
+render.yaml
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
